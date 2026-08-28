@@ -53,7 +53,6 @@
     content="dark"
   >
 
-
   <!-- =========================
        CANONICAL
   ========================== -->
@@ -63,9 +62,8 @@
     href="https://nuri-altaie.github.io/"
   >
 
-
   <!-- =========================
-       LANGUAGE / INTERNATIONALIZATION
+       LANGUAGE
   ========================== -->
 
   <link
@@ -79,7 +77,6 @@
     hreflang="x-default"
     href="https://nuri-altaie.github.io/"
   >
-
 
   <!-- =========================
        OPEN GRAPH
@@ -107,19 +104,13 @@
 
   <meta
     property="og:description"
-    content="الصفحة الرسمية لنوري الطائي، فني صيانة هواتف محمولة متخصص في Android Hardware &amp; Software وإصلاح Motherboard وReballing وTrace Repair وeMMC وISP."
+    content="الصفحة الرسمية لنوري الطائي، فني صيانة هواتف محمولة متخصص في Android Hardware & Software وإصلاح Motherboard وReballing وTrace Repair وeMMC وISP."
   >
 
   <meta
     property="og:url"
     content="https://nuri-altaie.github.io/"
   >
-
-  <!--
-    لا نضع og:image حاليًا لأن رابط صورة حقيقية
-    لم يتم تحديده بعد.
-  -->
-
 
   <!-- =========================
        TWITTER / X
@@ -137,28 +128,33 @@
 
   <meta
     name="twitter:description"
-    content="Nuri Al-Taie | Android Hardware &amp; Software Specialist | Mobile Phone Repair Technician | Iraq - Nineveh"
+    content="Nuri Al-Taie | Android Hardware & Software Specialist | Mobile Phone Repair Technician | Iraq - Nineveh"
   >
-
 
   <!-- =========================
        STRUCTURED DATA
   ========================== -->
 
   <script type="application/ld+json">
+
   {
     "@context": "https://schema.org",
     "@graph": [
 
       {
         "@type": "Person",
+
         "@id": "https://nuri-altaie.github.io/#person",
 
         "name": "نوري الطائي",
 
         "alternateName": [
           "Nuri Al-Taie",
-          "Nuri Altaie"
+          "Nuri Altaie",
+          "Nouri Al-Taie",
+          "Nouri Altaie",
+          "Nuri Al Taie",
+          "Nouri Al Taie"
         ],
 
         "url": "https://nuri-altaie.github.io/",
@@ -180,6 +176,7 @@
 
         "sameAs": [
           "https://www.facebook.com/nwry.mhmd.abrahym",
+          "https://www.facebook.com/profile.php?id=61594022636680",
           "https://www.tiktok.com/@nuri.9.8",
           "https://www.instagram.com/nuri_9_8"
         ],
@@ -210,9 +207,9 @@
         ]
       },
 
-
       {
         "@type": "WebSite",
+
         "@id": "https://nuri-altaie.github.io/#website",
 
         "url": "https://nuri-altaie.github.io/",
@@ -230,9 +227,9 @@
         }
       },
 
-
       {
         "@type": "WebPage",
+
         "@id": "https://nuri-altaie.github.io/#webpage",
 
         "url": "https://nuri-altaie.github.io/",
@@ -256,9 +253,9 @@
         }
       },
 
-
       {
         "@type": "ProfilePage",
+
         "@id": "https://nuri-altaie.github.io/#profilepage",
 
         "url": "https://nuri-altaie.github.io/",
@@ -284,8 +281,8 @@
 
     ]
   }
-  </script>
 
+  </script>
 
   <!-- =========================
        STYLE
@@ -304,19 +301,17 @@
       --accent-strong: #36c5f0;
       --line: #26324a;
       --chip-bg: #0e1729;
+      --success: #35d07f;
     }
-
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
       -webkit-text-size-adjust: 100%;
     }
-
 
     body {
       margin: 0;
@@ -344,30 +339,341 @@
       text-rendering: optimizeLegibility;
     }
 
-
     ::selection {
       background: var(--accent);
       color: #07101c;
     }
 
-
     a {
       color: inherit;
     }
-
 
     .container {
       width: min(1120px, 92%);
       margin-inline: auto;
     }
 
+    /* =========================
+       SEARCH
+    ========================== */
+
+    .search-area {
+      width: min(760px, 92%);
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 8px;
+
+      background:
+        rgba(18, 26, 45, 0.92);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 18px 50px
+        rgba(0, 0, 0, 0.28);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .search-box input {
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+
+      border: 0;
+      outline: none;
+
+      padding:
+        13px 15px;
+
+      background:
+        transparent;
+
+      color:
+        var(--text);
+
+      font-family: inherit;
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .search-box input::placeholder {
+      color: #8997ad;
+    }
+
+    .search-box button {
+      border: 0;
+
+      border-radius: 12px;
+
+      padding:
+        11px 20px;
+
+      background:
+        var(--accent);
+
+      color:
+        #07101c;
+
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .search-box button:hover {
+      background:
+        var(--accent-strong);
+
+      transform:
+        translateY(-1px);
+    }
+
+    .search-box button:focus-visible,
+    .search-box input:focus-visible {
+      outline:
+        2px solid
+        var(--accent);
+
+      outline-offset: 2px;
+    }
+
+    .search-hint {
+      text-align: center;
+
+      color:
+        var(--muted);
+
+      font-size: 13px;
+
+      margin-top: 9px;
+    }
+
+    /* =========================
+       SEARCH RESULTS
+    ========================== */
+
+    #searchResults {
+      display: none;
+
+      margin-bottom: 30px;
+
+      animation:
+        searchResultIn 0.25s ease;
+    }
+
+    #searchResults.show {
+      display: block;
+    }
+
+    @keyframes searchResultIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    .search-result-card {
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 26, 45, 0.98),
+          rgba(14, 21, 38, 0.96)
+        );
+
+      border:
+        1px solid
+        rgba(101, 215, 255, 0.28);
+
+      border-radius: 20px;
+
+      padding: 25px;
+
+      box-shadow:
+        0 20px 55px
+        rgba(0, 0, 0, 0.28);
+    }
+
+    .search-result-title {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 18px;
+    }
+
+    .search-result-title h2 {
+      margin: 0;
+    }
+
+    .verified-badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      padding:
+        4px 10px;
+
+      border:
+        1px solid
+        rgba(53, 208, 127, 0.35);
+
+      border-radius: 999px;
+
+      color:
+        var(--success);
+
+      background:
+        rgba(53, 208, 127, 0.07);
+
+      font-size: 12px;
+
+      font-weight: 700;
+    }
+
+    .search-result-info {
+
+      color:
+        var(--muted);
+
+      margin-bottom: 18px;
+    }
+
+    .search-links {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+    .profile-link {
+
+      display: block;
+
+      padding:
+        17px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 15px;
+
+      background:
+        rgba(10, 16, 30, 0.65);
+
+      text-decoration: none;
+
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .profile-link:hover {
+
+      border-color:
+        var(--accent);
+
+      background:
+        rgba(101, 215, 255, 0.05);
+
+      transform:
+        translateY(-2px);
+    }
+
+    .profile-link-title {
+
+      display: block;
+
+      color:
+        var(--accent);
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      margin-bottom: 3px;
+    }
+
+    .profile-link-description {
+
+      display: block;
+
+      color:
+        var(--muted);
+
+      font-size: 13px;
+    }
+
+    .search-empty {
+
+      text-align: center;
+
+      padding: 22px;
+
+      color:
+        var(--muted);
+
+      background:
+        rgba(18, 26, 45, 0.9);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 18px;
+    }
+
+    .search-empty strong {
+      color:
+        var(--accent);
+    }
 
     /* =========================
        HERO
     ========================== */
 
     .hero {
-      padding: 75px 0 48px;
+
+      padding:
+        60px 0 35px;
 
       text-align: center;
 
@@ -376,8 +682,8 @@
         rgba(101, 215, 255, 0.15);
     }
 
-
     .badge {
+
       display: inline-block;
 
       border:
@@ -389,7 +695,8 @@
       padding:
         5px 16px;
 
-      color: var(--accent);
+      color:
+        var(--accent);
 
       background:
         rgba(101, 215, 255, 0.04);
@@ -399,8 +706,8 @@
       font-weight: 600;
     }
 
-
     h1 {
+
       font-size:
         clamp(38px, 7vw, 64px);
 
@@ -412,31 +719,33 @@
       letter-spacing: -1px;
     }
 
-
     .subtitle {
+
       font-size:
         clamp(17px, 2.5vw, 21px);
 
       font-weight: 700;
 
-      color: #f4f8fc;
+      color:
+        #f4f8fc;
     }
 
-
     .location {
-      color: var(--muted);
+
+      color:
+        var(--muted);
 
       margin-top: 5px;
 
       font-size: 16px;
     }
 
-
     /* =========================
        SOCIAL
     ========================== */
 
     .social {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -448,8 +757,8 @@
       margin-top: 24px;
     }
 
-
     .social a {
+
       display: inline-flex;
 
       align-items: center;
@@ -467,7 +776,8 @@
 
       border-radius: 999px;
 
-      color: var(--text);
+      color:
+        var(--text);
 
       background:
         rgba(18, 26, 45, 0.65);
@@ -481,27 +791,29 @@
         transform 0.2s ease;
     }
 
-
     .social a:hover {
-      border-color: var(--accent);
 
-      color: var(--accent);
+      border-color:
+        var(--accent);
+
+      color:
+        var(--accent);
 
       background:
         rgba(101, 215, 255, 0.06);
 
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
-
     .social a:focus-visible {
+
       outline:
         2px solid
         var(--accent);
 
       outline-offset: 3px;
     }
-
 
     /* =========================
        MAIN GRID
@@ -511,8 +823,8 @@
       padding-bottom: 20px;
     }
 
-
     .grid {
+
       display: grid;
 
       grid-template-columns:
@@ -524,8 +836,8 @@
         30px 0;
     }
 
-
     .card {
+
       background:
         linear-gradient(
           145deg,
@@ -550,8 +862,8 @@
         transform 0.2s ease;
     }
 
-
     .card:hover {
+
       border-color:
         rgba(101, 215, 255, 0.28);
 
@@ -559,17 +871,128 @@
         translateY(-2px);
     }
 
-
     .full {
-      grid-column: 1 / -1;
+      grid-column:
+        1 / -1;
     }
 
+    /* =========================
+       OFFICIAL PAGES
+    ========================== */
+
+    .official-pages {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 15px;
+
+      margin-top: 20px;
+    }
+
+    .official-page {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding:
+        18px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 16px;
+
+      background:
+        rgba(10, 16, 30, 0.55);
+
+      text-decoration: none;
+
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .official-page:hover {
+
+      border-color:
+        var(--accent);
+
+      background:
+        rgba(101, 215, 255, 0.05);
+
+      transform:
+        translateY(-2px);
+    }
+
+    .official-page-text {
+      min-width: 0;
+    }
+
+    .official-page-name {
+
+      display: block;
+
+      color:
+        #ffffff;
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      margin-bottom: 3px;
+    }
+
+    .official-page-type {
+
+      display: block;
+
+      color:
+        var(--muted);
+
+      font-size: 13px;
+    }
+
+    .official-page-arrow {
+
+      flex-shrink: 0;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(101, 215, 255, 0.08);
+
+      color:
+        var(--accent);
+
+      font-size: 20px;
+    }
 
     /* =========================
        HEADINGS
     ========================== */
 
     h2 {
+
       font-size: 27px;
 
       line-height: 1.4;
@@ -577,31 +1000,30 @@
       margin:
         0 0 18px;
 
-      color: var(--accent);
+      color:
+        var(--accent);
     }
-
 
     p {
       margin:
         0 0 15px;
     }
 
-
     p:last-child {
       margin-bottom: 0;
     }
 
-
     strong {
-      color: #ffffff;
+      color:
+        #ffffff;
     }
-
 
     /* =========================
        CHIPS
     ========================== */
 
     .chips {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -609,8 +1031,8 @@
       gap: 9px;
     }
 
-
     .chip {
+
       border:
         1px solid
         #31445f;
@@ -620,7 +1042,8 @@
       padding:
         5px 12px;
 
-      color: #dbe8f5;
+      color:
+        #dbe8f5;
 
       background:
         var(--chip-bg);
@@ -632,42 +1055,44 @@
         color 0.2s ease;
     }
 
-
     .chip:hover {
-      border-color: var(--accent);
 
-      color: var(--accent);
+      border-color:
+        var(--accent);
+
+      color:
+        var(--accent);
     }
-
 
     /* =========================
        LISTS
     ========================== */
 
     ul {
+
       margin:
         0;
 
-      padding-right: 22px;
+      padding-right:
+        22px;
     }
-
 
     li {
       margin:
         6px 0;
     }
 
-
     li::marker {
-      color: var(--accent);
+      color:
+        var(--accent);
     }
-
 
     /* =========================
        WORK METHOD
     ========================== */
 
     .method {
+
       font-size:
         clamp(17px, 3vw, 21px);
 
@@ -685,17 +1110,18 @@
         1px dashed
         #38506d;
 
-      color: #fff;
+      color:
+        #fff;
 
       font-weight: 700;
     }
-
 
     /* =========================
        HR
     ========================== */
 
     hr {
+
       border: 0;
 
       border-top:
@@ -706,28 +1132,30 @@
         22px 0;
     }
 
-
     /* =========================
        FOOTER
     ========================== */
 
     footer {
+
       border-top:
         1px solid
         var(--line);
 
-      margin-top: 35px;
+      margin-top:
+        35px;
 
       padding:
         28px 0;
 
       text-align: center;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 14px;
+      font-size:
+        14px;
     }
-
 
     /* =========================
        MOBILE
@@ -736,61 +1164,90 @@
     @media (max-width: 750px) {
 
       .container {
-        width: min(94%, 650px);
+        width:
+          min(94%, 650px);
       }
-
 
       .hero {
         padding:
-          48px 0 35px;
+          42px 0 30px;
       }
-
 
       .grid {
-        grid-template-columns: 1fr;
 
-        gap: 16px;
+        grid-template-columns:
+          1fr;
 
-        margin-top: 20px;
+        gap:
+          16px;
+
+        margin-top:
+          20px;
       }
-
 
       .full {
-        grid-column: auto;
+        grid-column:
+          auto;
       }
-
 
       .card {
-        padding: 21px;
 
-        border-radius: 17px;
+        padding:
+          21px;
+
+        border-radius:
+          17px;
       }
-
 
       h2 {
-        font-size: 24px;
+        font-size:
+          24px;
       }
-
 
       .subtitle {
-        line-height: 1.7;
+        line-height:
+          1.7;
       }
-
 
       .social {
-        gap: 9px;
+        gap:
+          9px;
       }
 
-
       .social a {
-        min-width: 95px;
+
+        min-width:
+          95px;
 
         padding:
           8px 13px;
       }
 
-    }
+      .search-links {
 
+        grid-template-columns:
+          1fr;
+      }
+
+      .official-pages {
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .search-box {
+
+        border-radius:
+          15px;
+      }
+
+      .search-box button {
+
+        padding:
+          10px 14px;
+      }
+
+    }
 
     /* =========================
        VERY SMALL SCREENS
@@ -799,33 +1256,45 @@
     @media (max-width: 420px) {
 
       h1 {
-        font-size: 38px;
+        font-size:
+          38px;
       }
-
 
       .subtitle {
-        font-size: 16px;
+        font-size:
+          16px;
       }
-
 
       .location {
-        font-size: 14px;
+        font-size:
+          14px;
       }
-
 
       .method {
-        font-size: 16px;
 
-        line-height: 2;
+        font-size:
+          16px;
+
+        line-height:
+          2;
       }
 
-
       .chip {
-        font-size: 13px;
+        font-size:
+          13px;
+      }
+
+      .search-box input {
+        font-size:
+          14px;
+      }
+
+      .search-box button {
+        font-size:
+          14px;
       }
 
     }
-
 
     /* =========================
        REDUCED MOTION
@@ -834,19 +1303,22 @@
     @media (prefers-reduced-motion: reduce) {
 
       html {
-        scroll-behavior: auto;
+        scroll-behavior:
+          auto;
       }
-
 
       *,
       *::before,
       *::after {
-        transition: none !important;
-        animation: none !important;
+
+        transition:
+          none !important;
+
+        animation:
+          none !important;
       }
 
     }
-
 
     /* =========================
        PRINT
@@ -855,39 +1327,49 @@
     @media print {
 
       body {
-        background: #fff;
 
-        color: #111;
+        background:
+          #fff;
+
+        color:
+          #111;
       }
 
-
       .hero {
+
         border-bottom:
           1px solid #ccc;
       }
 
+      .card,
+      .search-result-card {
 
-      .card {
-        background: #fff;
+        background:
+          #fff;
 
-        color: #111;
+        color:
+          #111;
 
-        box-shadow: none;
+        box-shadow:
+          none;
 
         border:
           1px solid #ccc;
       }
 
+      .social,
+      .search-area {
 
-      .social {
-        display: none;
+        display:
+          none;
       }
-
 
       h1,
       h2,
       strong {
-        color: #111;
+
+        color:
+          #111;
       }
 
     }
@@ -896,9 +1378,7 @@
 
 </head>
 
-
 <body>
-
 
   <!-- =========================
        HEADER
@@ -912,11 +1392,9 @@
         الملف المهني الرسمي
       </span>
 
-
       <h1>
         نوري الطائي
       </h1>
-
 
       <div class="subtitle">
         فني صيانة هواتف محمولة |
@@ -924,11 +1402,46 @@
         Android
       </div>
 
-
       <div class="location">
         العراق – محافظة نينوى
       </div>
 
+      <!-- =========================
+           SEARCH BOX
+      ========================== -->
+
+      <div class="search-area">
+
+        <form
+          class="search-box"
+          id="searchForm"
+          autocomplete="off"
+        >
+
+          <input
+            id="nameSearch"
+            type="text"
+            inputmode="text"
+            placeholder="ابحث باسم نوري الطائي أو Nuri Al-Taie"
+            aria-label="البحث باسم نوري الطائي أو Nuri Al-Taie"
+          >
+
+          <button type="submit">
+            بحث
+          </button>
+
+        </form>
+
+        <div class="search-hint">
+
+          البحث متاح باسم
+          <strong>نوري الطائي</strong>
+          أو
+          <strong>Nuri Al-Taie</strong>
+
+        </div>
+
+      </div>
 
       <nav
         class="social"
@@ -939,11 +1452,10 @@
           href="https://www.facebook.com/nwry.mhmd.abrahym"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="حساب نوري الطائي على Facebook"
+          aria-label="صفحة نوري الطائي الرسمية على Facebook"
         >
           Facebook
         </a>
-
 
         <a
           href="https://www.tiktok.com/@nuri.9.8"
@@ -953,7 +1465,6 @@
         >
           TikTok
         </a>
-
 
         <a
           href="https://www.instagram.com/nuri_9_8"
@@ -970,6 +1481,18 @@
 
   </header>
 
+  <!-- =========================
+       SEARCH RESULTS
+  ========================== -->
+
+  <section
+    class="container"
+    aria-live="polite"
+  >
+
+    <div id="searchResults"></div>
+
+  </section>
 
   <!-- =========================
        MAIN CONTENT
@@ -979,17 +1502,13 @@
 
     <div class="grid">
 
-
-      <!-- =========================
-           PROFESSIONAL PROFILE
-      ========================== -->
+      <!-- PROFESSIONAL PROFILE -->
 
       <section class="card full">
 
         <h2>
           الملف المهني
         </h2>
-
 
         <p>
           فني صيانة هواتف محمولة متخصص في
@@ -999,14 +1518,12 @@
           تحليلًا دقيقًا للدوائر الإلكترونية والمسارات والفولتية والإشارات.
         </p>
 
-
         <p>
           تشمل مجالات العمل تشخيص الأعطال المعقدة،
           إصلاح المسارات، Reballing، التعامل مع الذاكرة والتخزين،
           معالجة مشاكل الإقلاع والتفليش، وتحليل دوائر الطاقة
           والإضاءة، إضافة إلى استخدام أدوات وبرامج صيانة متخصصة.
         </p>
-
 
         <p>
           تعتمد منهجية العمل على الفحص والقياس وتحليل النتائج
@@ -1016,10 +1533,84 @@
 
       </section>
 
+      <!-- OFFICIAL PAGES -->
 
-      <!-- =========================
-           SPECIALIZATION
-      ========================== -->
+      <section class="card full">
+
+        <h2>
+          🔗 الصفحات الرسمية
+        </h2>
+
+        <p>
+          يمكنك الوصول مباشرة إلى الصفحات الرسمية المرتبطة
+          بنوري الطائي ومكتب نوري الطائي للموبايلات:
+        </p>
+
+        <div class="official-pages">
+
+          <a
+            class="official-page"
+            href="https://www.facebook.com/nwry.mhmd.abrahym"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="فتح صفحة نوري الطائي الرسمية"
+          >
+
+            <span class="official-page-text">
+
+              <span class="official-page-name">
+                نوري الطائي
+              </span>
+
+              <span class="official-page-type">
+                الصفحة الرسمية على Facebook
+              </span>
+
+            </span>
+
+            <span
+              class="official-page-arrow"
+              aria-hidden="true"
+            >
+              ←
+            </span>
+
+          </a>
+
+          <a
+            class="official-page"
+            href="https://www.facebook.com/profile.php?id=61594022636680"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="فتح صفحة مكتب نوري الطائي للموبايلات الرسمية"
+          >
+
+            <span class="official-page-text">
+
+              <span class="official-page-name">
+                مكتب نوري الطائي للموبايلات
+              </span>
+
+              <span class="official-page-type">
+                الصفحة الرسمية على Facebook
+              </span>
+
+            </span>
+
+            <span
+              class="official-page-arrow"
+              aria-hidden="true"
+            >
+              ←
+            </span>
+
+          </a>
+
+        </div>
+
+      </section>
+
+      <!-- SPECIALIZATION -->
 
       <section class="card">
 
@@ -1027,13 +1618,11 @@
           التخصص المهني
         </h2>
 
-
         <p>
           <strong>
             Mobile Phone Hardware &amp; Software Repair
           </strong>
         </p>
-
 
         <p>
           <strong>
@@ -1042,54 +1631,35 @@
           أجهزة Android
         </p>
 
-
         <div class="chips">
 
           <span class="chip">Motherboard Repair</span>
-
           <span class="chip">Hardware Diagnostics</span>
-
           <span class="chip">Software &amp; Firmware Repair</span>
-
           <span class="chip">Reballing</span>
-
           <span class="chip">Trace Repair</span>
-
           <span class="chip">Power Circuit Diagnostics</span>
-
           <span class="chip">Display &amp; Backlight</span>
-
           <span class="chip">Memory &amp; Storage</span>
-
           <span class="chip">Boot &amp; Dead Boot</span>
-
           <span class="chip">Flashing</span>
-
           <span class="chip">Short Circuit</span>
-
           <span class="chip">Voltage &amp; Resistance</span>
-
           <span class="chip">ISP / eMMC</span>
-
           <span class="chip">Firmware Management</span>
-
           <span class="chip">Device Programming</span>
 
         </div>
 
       </section>
 
-
-      <!-- =========================
-           HARDWARE
-      ========================== -->
+      <!-- HARDWARE -->
 
       <section class="card">
 
         <h2>
           🔧 صيانة الهاردوير
         </h2>
-
 
         <ul>
 
@@ -1129,17 +1699,13 @@
 
       </section>
 
-
-      <!-- =========================
-           MOTHERBOARD
-      ========================== -->
+      <!-- MOTHERBOARD -->
 
       <section class="card">
 
         <h2>
           🛠️ إصلاح المذربورد
         </h2>
-
 
         <ul>
 
@@ -1171,17 +1737,13 @@
 
       </section>
 
-
-      <!-- =========================
-           REBALLING
-      ========================== -->
+      <!-- REBALLING -->
 
       <section class="card">
 
         <h2>
           🔬 Reballing &amp; IC Work
         </h2>
-
 
         <ul>
 
@@ -1205,17 +1767,13 @@
 
       </section>
 
-
-      <!-- =========================
-           SOFTWARE
-      ========================== -->
+      <!-- SOFTWARE -->
 
       <section class="card">
 
         <h2>
           💻 صيانة السوفتوير والبرمجة
         </h2>
-
 
         <ul>
 
@@ -1251,10 +1809,7 @@
 
       </section>
 
-
-      <!-- =========================
-           TOOLS
-      ========================== -->
+      <!-- TOOLS -->
 
       <section class="card full">
 
@@ -1262,8 +1817,8 @@
           🧰 أدوات وبوكسات الصيانة والبرمجة
         </h2>
 
-
         <p>
+
           <strong>
             أدوات متعددة الأنظمة:
           </strong>
@@ -1276,10 +1831,11 @@
           Pandora،
           Ameer Tool،
           TSM Tool.
+
         </p>
 
-
         <p>
+
           <strong>
             Samsung:
           </strong>
@@ -1287,10 +1843,11 @@
           Z3X Pro،
           Octoplus،
           وأدوات صيانة وبرمجة أجهزة Samsung.
+
         </p>
 
-
         <p>
+
           <strong>
             أدوات وواجهات متخصصة:
           </strong>
@@ -1299,14 +1856,12 @@
           MiPi Tester Pro،
           iRepair P10،
           وأدوات ISP وعمليات eMMC والفحص والبرمجة والقراءة والكتابة.
+
         </p>
 
       </section>
 
-
-      <!-- =========================
-           MEMORY
-      ========================== -->
+      <!-- MEMORY -->
 
       <section class="card">
 
@@ -1314,40 +1869,23 @@
           💾 الذاكرة والتخزين
         </h2>
 
-
         <ul>
 
-          <li>
-            eMMC
-          </li>
+          <li>eMMC</li>
 
-          <li>
-            ISP
-          </li>
+          <li>ISP</li>
 
-          <li>
-            قراءة وكتابة الذاكرة
-          </li>
+          <li>قراءة وكتابة الذاكرة</li>
 
-          <li>
-            Backup &amp; Restore
-          </li>
+          <li>Backup &amp; Restore</li>
 
-          <li>
-            التعامل مع ملفات Dump
-          </li>
+          <li>التعامل مع ملفات Dump</li>
 
-          <li>
-            فحص الذاكرة وتشخيص مشاكلها
-          </li>
+          <li>فحص الذاكرة وتشخيص مشاكلها</li>
 
-          <li>
-            التعامل مع EXT_CSD
-          </li>
+          <li>التعامل مع EXT_CSD</li>
 
-          <li>
-            تحليل مشاكل الإقلاع المرتبطة بالذاكرة
-          </li>
+          <li>تحليل مشاكل الإقلاع المرتبطة بالذاكرة</li>
 
           <li>
             استعادة أو كتابة البيانات عند توفر الإمكانية الفنية
@@ -1357,10 +1895,7 @@
 
       </section>
 
-
-      <!-- =========================
-           DIAGNOSTIC TOOLS
-      ========================== -->
+      <!-- DIAGNOSTIC TOOLS -->
 
       <section class="card">
 
@@ -1368,45 +1903,27 @@
           🔌 أدوات القياس والتشخيص
         </h2>
 
-
         <ul>
 
-          <li>
-            DC Power Supply
-          </li>
+          <li>DC Power Supply</li>
 
-          <li>
-            Digital Multimeter
-          </li>
+          <li>Digital Multimeter</li>
 
-          <li>
-            Microscope
-          </li>
+          <li>Microscope</li>
 
-          <li>
-            MiPi Tester Pro
-          </li>
+          <li>MiPi Tester Pro</li>
 
-          <li>
-            أدوات قياس الفولتية والممانعة
-          </li>
+          <li>أدوات قياس الفولتية والممانعة</li>
 
-          <li>
-            أدوات فحص خطوط الطاقة والإشارات
-          </li>
+          <li>أدوات فحص خطوط الطاقة والإشارات</li>
 
-          <li>
-            أدوات تشخيص الشورت والسحب الكهربائي
-          </li>
+          <li>أدوات تشخيص الشورت والسحب الكهربائي</li>
 
         </ul>
 
       </section>
 
-
-      <!-- =========================
-           WORK METHOD
-      ========================== -->
+      <!-- WORK METHOD -->
 
       <section class="card full">
 
@@ -1414,11 +1931,9 @@
           🧠 منهجية العمل
         </h2>
 
-
         <div class="method">
           الفحص → القياس → تحليل النتائج → تحديد مصدر العطل → الإصلاح → الاختبار النهائي
         </div>
-
 
         <p>
           التركيز على الوصول إلى سبب المشكلة الحقيقي بدل الاعتماد
@@ -1428,17 +1943,13 @@
 
       </section>
 
-
-      <!-- =========================
-           PROFESSIONAL STRENGTHS
-      ========================== -->
+      <!-- PROFESSIONAL STRENGTHS -->
 
       <section class="card">
 
         <h2>
           ⭐ نقاط القوة المهنية
         </h2>
-
 
         <ul>
 
@@ -1486,10 +1997,7 @@
 
       </section>
 
-
-      <!-- =========================
-           PROFESSIONAL FIELD
-      ========================== -->
+      <!-- PROFESSIONAL FIELD -->
 
       <section class="card">
 
@@ -1497,13 +2005,11 @@
           🏢 المجال المهني
         </h2>
 
-
         <p>
           <strong>
             Mobile Phone Repair Technician
           </strong>
         </p>
-
 
         <p>
           <strong>
@@ -1511,13 +2017,11 @@
           </strong>
         </p>
 
-
         <p>
           <strong>
             Motherboard Repair Technician
           </strong>
         </p>
-
 
         <p>
           <strong>
@@ -1525,23 +2029,21 @@
           </strong>
         </p>
 
-
         <hr>
 
-
         <p>
+
           <strong>
             📍 الموقع:
           </strong>
 
           العراق – محافظة نينوى
-        </p>
 
+        </p>
 
         <h2>
           🎯 الهدف المهني
         </h2>
-
 
         <p>
           الاستمرار في تطوير الخبرة الفنية في مجال صيانة وبرمجة
@@ -1551,11 +2053,9 @@
 
       </section>
 
-
     </div>
 
   </main>
-
 
   <!-- =========================
        FOOTER
@@ -1574,7 +2074,293 @@
 
   </footer>
 
+  <!-- =========================
+       SEARCH SCRIPT
+  ========================== -->
+
+  <script>
+
+    (function () {
+
+      "use strict";
+
+      const form =
+        document.getElementById("searchForm");
+
+      const input =
+        document.getElementById("nameSearch");
+
+      const results =
+        document.getElementById("searchResults");
+
+
+      /*
+       * توحيد أشكال الحروف العربية
+       * وتوحيد المسافات والحروف الإنجليزية
+       */
+
+      function normalizeArabic(text) {
+
+        return text
+          .trim()
+          .toLowerCase()
+
+          // إزالة التشكيل
+          .replace(/[\u064B-\u065F\u0670]/g, "")
+
+          // توحيد الحروف العربية
+          .replace(/[أإآ]/g, "ا")
+          .replace(/ى/g, "ي")
+          .replace(/ة/g, "ه")
+
+          // توحيد الشرطات
+          .replace(/[‐-‒–—―-]/g, " ")
+
+          // توحيد المسافات
+          .replace(/\s+/g, " ")
+
+          .trim();
+
+      }
+
+
+      /*
+       * جميع الأسماء المسموح بالبحث عنها.
+       *
+       * أي اسم من هذه الأسماء يعرض
+       * نفس ملف نوري الطائي.
+       */
+
+      const allowedNames = [
+
+        normalizeArabic("نوري الطائي"),
+
+        normalizeArabic("Nuri Al-Taie"),
+
+        normalizeArabic("Nuri Altaie"),
+
+        normalizeArabic("Nouri Al-Taie"),
+
+        normalizeArabic("Nouri Altaie"),
+
+        normalizeArabic("Nuri Al Taie"),
+
+        normalizeArabic("Nouri Al Taie")
+
+      ];
+
+
+      /*
+       * إنشاء نتيجة البحث.
+       *
+       * النتيجة واحدة سواء تم البحث
+       * بالعربي أو بالإنجليزي.
+       */
+
+      function showNuriResult() {
+
+        results.innerHTML = `
+
+          <div class="search-result-card">
+
+            <div class="search-result-title">
+
+              <h2>
+                🔎 نتيجة البحث: نوري الطائي
+              </h2>
+
+              <span class="verified-badge">
+                ✓ ملف رسمي
+              </span>
+
+            </div>
+
+            <p class="search-result-info">
+
+              تم العثور على الملف المهني الرسمي لنوري الطائي.
+              تظهر أدناه جميع المعلومات المهنية والصفحتان الرسميتان
+              المرتبطتان به.
+
+            </p>
+
+            <div class="search-links">
+
+              <a
+                class="profile-link"
+                href="https://www.facebook.com/nwry.mhmd.abrahym"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <span class="profile-link-title">
+                  نوري الطائي
+                </span>
+
+                <span class="profile-link-description">
+                  الصفحة الرسمية على Facebook
+                </span>
+
+              </a>
+
+
+              <a
+                class="profile-link"
+                href="https://www.facebook.com/profile.php?id=61594022636680"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <span class="profile-link-title">
+                  مكتب نوري الطائي للموبايلات
+                </span>
+
+                <span class="profile-link-description">
+                  الصفحة الرسمية للمكتب على Facebook
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        `;
+
+        results.classList.add("show");
+
+        results.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+
+      /*
+       * نتيجة البحث الخاطئ.
+       */
+
+      function showEmptyResult() {
+
+        results.innerHTML = `
+
+          <div class="search-empty">
+
+            لا توجد نتيجة.
+
+            <br>
+
+            يمكنك البحث عن:
+
+            <strong>
+              نوري الطائي
+            </strong>
+
+            <br>
+
+            أو:
+
+            <strong>
+              Nuri Al-Taie
+            </strong>
+
+          </div>
+
+        `;
+
+        results.classList.add("show");
+
+        results.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+
+      /*
+       * إخفاء النتائج.
+       */
+
+      function hideResults() {
+
+        results.innerHTML = "";
+
+        results.classList.remove("show");
+
+      }
+
+
+      /*
+       * تنفيذ البحث.
+       */
+
+      form.addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+          const value =
+            normalizeArabic(input.value);
+
+
+          /*
+           * إذا كان الحقل فارغًا:
+           * لا نعرض نتيجة.
+           */
+
+          if (!value) {
+
+            hideResults();
+
+            return;
+
+          }
+
+
+          /*
+           * يسمح بالبحث عن نوري الطائي
+           * بالعربي أو بالإنجليزي.
+           */
+
+          if (allowedNames.includes(value)) {
+
+            showNuriResult();
+
+          } else {
+
+            showEmptyResult();
+
+          }
+
+        }
+      );
+
+
+      /*
+       * إذا مسح المستخدم النص بالكامل،
+       * تختفي النتائج.
+       */
+
+      input.addEventListener(
+        "input",
+        function () {
+
+          if (!input.value.trim()) {
+
+            hideResults();
+
+          }
+
+        }
+      );
+
+
+    })();
+
+  </script>
 
 </body>
 
-  </html>
+</html>
